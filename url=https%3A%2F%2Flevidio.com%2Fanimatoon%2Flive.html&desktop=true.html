@@ -1,0 +1,1895 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Levidio Animatoon Live</title>
+    <link type="text/css" rel="stylesheet" href="../../levidio.com/animatoon/assets/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../../levidio.com/animatoon/assets/css/dripicons.css">
+    <link type="text/css" rel="stylesheet" href="../../levidio.com/animatoon/assets/css/styles.min.css">
+
+    <meta content="https://levidio.com/animatoon/live.html" property="og:url">
+	<meta content="website" property="og:type">
+	<meta content="Levidio Animatoon" property="og:title">
+	<meta content="Create Studio Quality Animated Video in Just 2 Minutes!" property="og:description">
+    <meta content="../../levidio.com/animatoon/assets/img/fb-thumb.jpg" property="og:image">
+
+    <link rel="icon" type="image/png" href="../../levidio.com/animatoon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../../levidio.com/animatoon/favicon-16x16.png" sizes="16x16">
+
+    <style>
+        .navbar{
+            position: relative;
+            margin-bottom: -100px;
+            z-index: 100;
+        }
+        .navbar-bg{
+            background-color: transparent!important;
+        }
+        .buy-package{
+            width: 100%!important;
+            animation: none!important;
+            padding: 30px!important;
+        }
+        .checklist{
+            margin: 60px 30px 50px!important;
+        }
+        .checklist.grey li:before{
+            filter: grayscale(100%);
+        }
+        .checklist.grey li.no:before{
+            filter: grayscale(0%);
+            background: url('../../levidio.com/animatoon/assets/img/cross.png') no-repeat!important;
+        }
+        .coupon{
+            display: inline-block;
+            padding: 8px 15px;
+            border: 2px dashed #c84848;
+            border-radius: 5px;
+            color: #c84848;
+            margin-top: 20px;
+            position: relative;
+        }
+        .coupon:after{
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: url('../../levidio.com/animatoon/assets/img/cut.png')no-repeat center center;
+            background-size: 100%;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+        }
+        .tx-weight-8{
+            font-weight: 800;
+        }
+        .fixed-footer{
+            position: fixed;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            border-top: 4px solid #F078A3;
+            background: #4221B7;
+            padding: 20px 0;
+            color: #FFF;
+            z-index: 101;
+        }
+        .fixed-footer h5{
+            font-size: 24px;
+            line-height: 1.4em;
+        }
+
+        /* Timer Wrapper */
+        .timer-wrapper {
+            display: inline-block;
+            text-align: center;
+            width: 70px !important;
+        }
+
+        .timer-wrapper .time {
+            font-size: 30px;
+            line-height: 1em!important;
+            font-weight: 800;
+            margin-bottom: 0px !important;
+            color: #FFF!important
+        }
+
+        .timer-wrapper .text {
+            font-weight: 500;
+            font-size: 14px !important;
+            letter-spacing: .03em !important;
+            color: #FFF!important
+        }
+
+
+        .timer-wrapper.md {
+            width: 75px
+        }
+
+        .timer-wrapper.md .time {
+            font-size: 28px;
+            margin-bottom: 3px
+        }
+
+        .timer-wrapper.md .text {
+            font-size: 14px
+        }
+
+        .timer-wrapper.sm {
+            width: 40px;
+            margin: 0 auto
+        }
+
+        .timer-wrapper.sm .time {
+            height: 35px;
+            font-size: 16px;
+            margin-bottom: -20px !important
+        }
+
+        .timer-wrapper.sm .text {
+            font-size: 11px
+        }
+
+        @media screen and (max-width: 992px) {
+            .timer-wrapper {
+                width: 60px !important
+            }
+            .timer-wrapper .time {
+                font-size: 24px !important
+            }
+            .timer-wrapper .text {
+                font-size: 12px !important
+            }
+        }
+
+        @media screen and(max-width: 768px){
+            .fixed-footer{
+                padding: 15px 0;
+            }
+            .fixed-footer h5{
+                font-size: 14px!important;
+                line-height: 1.4em;
+            }
+            .timer-wrapper {
+                width: 50px !important
+            }
+            .timer-wrapper .time {
+                font-size: 18px !important
+            }
+            .timer-wrapper .text {
+                font-size: 10px !important
+            }
+        }
+
+        @media screen and (max-width: 575px) {
+            .timer-wrapper {
+                width: 70px
+            }
+            .fixed-footer h5{
+                font-size: 14px!important;
+                line-height: 1.4em;
+            }
+            .timer-wrapper .time {
+                font-size: 34px;
+                margin-bottom: 5px
+            }
+            .timer-wrapper .text {
+                font-size: 13px
+            }
+            .timer-wrapper.md {
+                width: 50px;
+                text-align: right
+            }
+            .timer-wrapper.sm {
+                width: 50px;
+                text-align: center
+            }
+        }
+        @media screen and (min-width: 575px) {
+            .text-sm-left{
+                text-align: left;      
+            }
+            .text-sm-right{
+                text-align: right;      
+            }
+        }
+    </style>
+<script async="" src="../../connect.facebook.net/en_US/fbevents.js"></script><script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1794203620815438');
+    fbq('track', 'PageView');
+</script></head>
+<!-- Facebook Pixel Code -->
+
+<body class="salespage"><noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1794203620815438&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+    <!-- Start: Navbar -->
+    <nav class="navbar navbar-expand-md">
+        <div class="container">
+            <a class="navbar-brand" href="#header">
+                Animatoon
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="self" href="#buyb">
+                            <button class="btn btn-gradient-purple btn-rounded">Get Instant Access <span class="d-md-none d-lg-inline-block">Here</span></button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- <div class="row text-right d-none d-sm-block d-md-none" style="flex-grow: 1">
+                <div class="col-sm-12">
+                    <a class="open-chatbox color-white">
+                        <img class="nav-icon svg" src="assets/img/chat.svg" alt="">
+                    </a>
+                    <a class="mx-3" href="https://wa.me/6282299996281?text=Hai%20Rootpixel" target="_blank">
+                        <img class="nav-icon svg" src="assets/img/wa.svg" alt="">
+                    </a>
+                    <a class="self" href="#module-title">
+                        <img class="nav-icon svg" src="assets/img/preview.svg" alt="">
+                    </a>
+                </div>
+            </div> -->
+            <ul class="navbar-nav ml-auto d-md-none">
+                <li class="nav-item">
+                    <a class="self" href="#buyb">
+                        <button class="btn btn-gradient-purple btn-rounded">Get Instant Access <span class="d-md-none d-lg-inline-block">Here</span></button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- End: Navbar -->
+
+    <header class="position-relative">
+        <img class="ornament ornament-top" src="../../levidio.com/animatoon/assets/img/header-ornament-top.png">
+        <div class="header-content">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-10 offset-md-1">
+                        <div class="divider d-md-none"></div>
+                        <h1 class="extrabold">Create Studio Quality Animated Video in Just 2 Minutes!</h1>
+                        <h5 class="bold color-yellow">
+                            Get more customers and increase your brand awareness using professionally <br class="d-none d-xl-block"> created video animations quickly and easily using only PowerPoint.
+                        </h5>
+                    </div>
+                </div>
+                <div class="divider-md"></div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- <div class="header-vid fe video-yt">
+                            <div id="player"></div>
+                        </div> -->
+                        <div class="header-vid fe custom-thumb">
+                            <img src="../../levidio.com/animatoon/assets/img/vsl-fe.gif" class="thumb" width="100%" data-video="https://www.youtube.com/embed/QmPN3nd7Zp8?autoplay=1;rel=0;showinfo=0;controls=0" alt="">
+                            <button class="btnply"><i class="dripicons dripicons-volume-full mr-1"></i> Click to Unmute</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 my-auto">
+                        <div class="divider-lg d-lg-none"></div>
+                        <ul class="header-checklist">
+                            <li>The easiest way to create animated videos using only PowerPoint, with NO additional software or plugins required</li>
+                            <li>Fully customizable templates. Almost all elements are editable ranging from images, graphics, videos, texts and audio so that levidio animatoon can be used to make a video for ANY PRODUCT!</li>
+                            <li>Complete tutorials and tips included, you do not need any specialized training or skills to use Levidio Animatoon.</li>
+                            <li>Export high-quality full HD videos and improve your brand recognition within minutes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="ornament ornament-bottom" src="../../levidio.com/animatoon/assets/img/header-ornament-bottom.png">
+    </header>
+
+    <!-- Start: Modules -->
+    <section id="modules">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 text-center text-lg-left">
+                    <h4 class="extrabold color-dark mb-0">Get Access to  <br class="d-md-none"> Levidio Animatoon Now.</h4>
+                    <h6 class="semibold">Here is what you get with Levidio Animatoon.</h6>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row gutter-sm">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6">
+                    <div class="module">
+                        <div class="module-thumb">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/1.jpg" alt="">
+                        </div>
+                        Animated &amp; Static Character Sets
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6">
+                    <div class="module">
+                        <div class="module-thumb">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/2.jpg" alt="">
+                        </div>
+                        Huge Variety of Explainer Video Templates
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6">
+                    <div class="module">
+                        <div class="module-thumb">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/3.jpg" alt="">
+                        </div>
+                        Animated &amp; Static World Landscape Background
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6">
+                    <div class="module">
+                        <div class="module-thumb">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/4.jpg" alt="">
+                        </div>
+                        Animated &amp; Static Infographic Templates
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6">
+                    <div class="module">
+                        <div class="module-thumb">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/5.jpg" alt="">
+                        </div>
+                        Animated &amp; Static Banners
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6">
+                    <div class="module">
+                        <div class="module-thumb">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/6.jpg" alt="">
+                        </div>
+                        Animated &amp; Static Room Background
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-4 col-6 d-xl-none">
+                    <div class="module">
+                        <div class="module-thumb">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/8.jpg" alt="">
+                        </div>
+                        Animated &amp; Static Office Background
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-4 col-6 d-xl-none">
+                    <div class="module">
+                        <div class="module-thumb">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/7.jpg" alt="">
+                        </div>
+                        Animated &amp; Static Studio Background
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-4 col-6 offset-lg-1 offset-md-1 d-xl-none ">
+                    <div class="module">
+                        <div class="module-thumb">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/9.jpg" alt="">
+                        </div>
+                        Animated &amp; Static Landscape Background
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-4 col-6 d-xl-none offset-sm-1 offset-md-0">
+                    <div class="module">
+                        <div class="module-thumb">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/10.jpg" alt="">
+                        </div>
+                        Animated &amp; Static Papercut Background
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-4 col-6 d-xl-none">
+                    <div class="module">
+                        <div class="module-thumb">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/11.jpg" alt="">
+                        </div>
+                        Animated &amp; Static Abstract Backgrounds
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hide on Mobile -->
+            <div class="row d-none d-xl-block">
+                <div class="col-md-10 offset-md-1">
+                    <div class="row gutter-sm">
+                        <div class="col-xl">
+                            <div class="module">
+                                <div class="module-thumb">
+                                    <img src="../../levidio.com/animatoon/assets/img/modules/8.jpg" alt="">
+                                </div>
+                                Animated &amp; Static Office Background
+                            </div>
+                        </div>
+                        <div class="col-xl">
+                            <div class="module">
+                                <div class="module-thumb">
+                                    <img src="../../levidio.com/animatoon/assets/img/modules/7.jpg" alt="">
+                                </div>
+                                Animated &amp; Static Studio Background
+                            </div>
+                        </div>
+                        <div class="col-xl">
+                            <div class="module">
+                                <div class="module-thumb">
+                                    <img src="../../levidio.com/animatoon/assets/img/modules/9.jpg" alt="">
+                                </div>
+                                Animated &amp; Static Landscape Background
+                            </div>
+                        </div>
+                        <div class="col-xl">
+                            <div class="module">
+                                <div class="module-thumb">
+                                    <img src="../../levidio.com/animatoon/assets/img/modules/10.jpg" alt="">
+                                </div>
+                                Animated &amp; Static Papercut Background
+                            </div>
+                        </div>
+                        <div class="col-xl">
+                            <div class="module">
+                                <div class="module-thumb">
+                                    <img src="../../levidio.com/animatoon/assets/img/modules/11.jpg" alt="">
+                                </div>
+                                Animated &amp; Static Abstract Backgrounds
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End: Modules -->
+
+    <!-- Start: Steps -->
+    <section id="steps" class="pt-0">
+        <img class="ornament ornament-top position-relative" src="../../levidio.com/animatoon/assets/img/steps-top.png">
+        <div class="container">
+            <div class="divider-md"></div>
+            <div class="text-center">
+                <h3 class="extrabold color-purple">Create Better and Enchanting Videos <br class="d-none d-sm-block"> Now as easy as 1 - 2 – 3</h3>
+                <h6 class="semibold color-dark soft">
+                    Levidio animation breaks PowerPoint boundaries and makes it possible   <br class="d-none d-lg-block">
+                    for you to make compelling videos in 2 minutes!
+                </h6>
+            </div>
+            <div class="divider-lg"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-xl-10 offset-xl-1">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 px-xl-5 px-lg-3">
+                                    <div class="step">
+                                        <div class="step-num">1</div>
+                                        <img class="step-img" src="../../levidio.com/animatoon/assets/img/choose.png" alt="">
+                                        <p class="bold color-dark mb-1">Choose</p>
+                                        <div class="text-sm">
+                                            Choose one of dozens of professional templates that we provide.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 px-xl-5 px-lg-3">
+                                    <div class="divider-md d-none d-xl-block"></div>
+                                    <div class="divider d-none d-xl-block"></div>
+                                    <div class="step">
+                                        <div class="step-num">2</div>
+                                        <img class="step-img" src="../../levidio.com/animatoon/assets/img/customize.png" alt="">
+                                        <p class="bold color-dark mb-1">Customize</p>
+                                        <div class="text-sm">
+                                            Change and modify your template easily, follow our tutorial, and combine it with hundreds of assets that we have provided.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 px-xl-5 px-lg-3">
+                                    <div class="divider d-none d-xl-block"></div>
+                                    <div class="step">
+                                        <div class="step-num">3</div>
+                                        <img class="step-img" src="../../levidio.com/animatoon/assets/img/export.png" alt="">
+                                        <p class="bold color-dark mb-1">Export</p>
+                                        <div class="text-sm">
+                                            Export your work into high-quality videos that are ready to help your promotion.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End: Steps -->
+
+    <!-- Start: Intro -->
+    <section id="intro">
+        <!-- <img class="ornament ornament-top position-relative" src="assets/img/testi-top.png" style="top: -60px;"> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 offset-xl-1 col-md-6">
+                    <img src="../../levidio.com/animatoon/assets/img/1.png" alt="">
+                </div>
+                <div class="col-xl-5 offset-xl-1 my-auto">
+                    <div class="divider"></div>
+                    <h2 class="color-dark extrabold mb-3">Video, Undeniable Domination</h2>
+                    <p class="color-medgrey">
+                        Did you know that 70% of internet users watch online videos and more than 85% of people decide to buy after watching a promotional video? Video has become an undeniable dominance on the Internet.
+                        <br><br>
+                        One of the most <b>powerful</b> types of videos for promoting products, services, or improving your personal branding.
+                        <br><br>
+                        Explainer Video is a type of video that is concise and to the point in explaining and promoting companies, products or services with animations captivating your video audience.
+                    </p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            
+            <div class="row">
+                <div class="col-xl-5 offset-xl-1 col-lg-6 col-md-7 my-auto">
+                    <h3 class="color-dark extrabold mb-4">3 Reasons Why Your Business Needs Video Explainers</h3>
+                    <ol class="intro-checklist color-medgrey">
+                        <li>Explainer Videos Increase Sales Conversions. Case studies say the average person needs less than a minute to decide to buy an item. So the video explainer is very suitable because this type of video is short, compact, and directly to the target.</li>
+                        <li>Explainer Videos help you capture the attention of your audience. This type of video has been shown to increase people's understanding of the product or service that you are advertising</li>
+                        <li>An explainer video is proven to make people feel at home to see your video because it is made with a combination of animation and video effects that are interesting and not boring.</li>
+                    </ol>
+                </div>
+                <div class="col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 d-none d-md-block">
+                    <div class="intro intro-2">
+                        <img src="../../levidio.com/animatoon/assets/img/intro-2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider-lg"></div>
+            
+            <div class="row">
+                <div class="col-xl-5 offset-xl-1 col-lg-5 col-md-5">
+                    <div class="intro intro-3 d-none d-md-block">
+                        <img src="../../levidio.com/animatoon/assets/img/intro-3.jpg" alt="">
+                    </div>
+                    <div class="divider-md d-none d-md-block"></div>
+                    <img src="../../levidio.com/animatoon/assets/img/2.png" alt="">
+                </div>
+                <div class="col-xl-5 offset-xl-1 col-lg-6 offset-lg-1 col-md-7">
+                    <div class="divider"></div>
+                    <h2 class="color-dark extrabold mb-4">But how?</h2>
+                    <p class="mb-0 color-medgrey">
+                        Most people will say: <br>
+                        "It's really hard to make animated videos"<br>
+                        "The cost is definitely expensive" or<br>
+                        "I'm lazy to learn video software that is complicated and makes me dizzy"
+                        <br><br>
+                        The good news, we will introduce the easiest way to create professional animated videos using PowerPoint only.
+                        <br><br>
+                        We broke the old stigma that PowerPoint is just for boring presentations, and now you can use it as a super powerful tool for creating high-quality animated videos and having the ability to sell all kinds of products.
+                    </p>
+                    <br>
+                    <p class="mb-0 color-medgrey">and the best parts:</p><br>
+                    <div class="checklist-feature">
+                        <h6 class="bold color-dark extrabold mb-1">NO NEED TO HIRE PROFESSIONAL VIDEO CREATOR</h6>
+                        <p class="color-medgrey">because you can create your own video in minutes. Stop spending $500-$1,000 per video!</p>
+                        <div class="divider-sm"></div>
+                        <h6 class="bold color-dark extrabold mb-1">NO NEED TO LEARN ABOUT COMPLICATED SOFTWARE</h6>
+                        <p class="color-medgrey">Forget about the hassle. It has nothing to do with adobe after effect or any other complicated video tool</p>
+                        <div class="divider-sm"></div>
+                        <h6 class="bold color-dark extrabold mb-1">NO NEED TO PAY A FORTUNE FOR A SINGLE TEMPLATE</h6>
+                        <p class="color-medgrey">After effect, video template can cost you between $40-$140+ per template, yet you still need to learn about the software before you can edit it</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End: Intro -->
+
+    <!-- Start: Ecover -->
+    <section id="ecover" class="py-0">
+        <img class="ornament ornament-top" src="../../levidio.com/animatoon/assets/img/ecover-top.png">
+        <div class="container">
+            <div class="ecover-content">
+                <div class="row text-center">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h5 class="soft-md mb-3 bold">Introducing A Solution that makes It easier for Everyone <br class="d-none d-md-block">  to be able to Make World’s Class Video Explainer Quickly and Easily.</h5>
+                        <h1 class="color-yellow extrabold">Levidio Animatoon</h1>
+                        <div class="divider"></div>
+                        <img src="../../levidio.com/animatoon/assets/img/ecover.png" class="ecover" alt="">
+                        <div class="divider"></div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-10 offset-md-1">
+                        <h5 class="extrabold">Introducing the latest products from Levidio:<br>
+                        <span class="color-yellow">Levidio Animatoon</span></h5> <br>
+                        <h6 class="soft-md">
+                            With Levidio Animatoon, you can create world-class  animation videos that only use PowerPoint. <br> No additional plugins needed.
+                            <br><br>
+                            Levidio Animatoon designed by online business practitioners for all businesses of any scale who want to dominate the market using video, for all devices and platforms.
+                        </h6>
+                        <h5 class="extrabold color-yellow">And Why Powerpoint?</h5>
+                        <h6 class="soft-md">
+                            PowerPoint is one of the most familiar tools or software and almost everyone has or had used it. Today Powerpoint is growing and able to support professional video creation using the best video creation features, and when combined with templates and assets from Levidio will be an extraordinary tool that allows everyone to make videos and graphics faster and easy.
+                        </h6>
+                    </div>
+                </div>
+                <div class="divider-md"></div>
+            </div>
+        </div>
+        <img class="ornament ornament-bottom" src="../../levidio.com/animatoon/assets/img/ecover-bottom.png">
+    </section>
+    <!-- End: Ecover -->
+
+    <!-- Start: Reason -->
+    <section id="reason">
+        <div class="container">
+            <div class="divider-sm"></div>
+            <h3 class="text-center extrabold color-dark mb-3">
+                Levidio Animatoon is <span class="color-green">the Solution <br> for Promotion &amp; Branding Needs</span>
+            </h3>
+            <h6 class="text-center semibold color-medgrey">This is the reason why Levidio is the right solution for your promotion problem</h6>
+            <div class="divider-lg"></div>
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img src="../../levidio.com/animatoon/assets/img/mudah.gif" class="reason-gif" alt="">
+                        </div>
+                        <div class="col-md-6 offset-md-1 my-auto text-center text-md-left">
+                            <div class="divider-sm d-md-none"></div>
+                            <h4 class="extrabold color-dark">Easy to Customize</h4>
+                            <p class="color-medgrey">Click, adjust, and replace images, colors, text and sounds using only PowerPoint. Super easy even for beginners though</p>
+                        </div>
+                    </div>
+                    <div class="divider-md"></div>
+                    <div class="row d-flex">
+                        <div class="col-md-6 my-auto text-center text-md-left order-md-0 order-2">
+                            <div class="divider-sm d-md-none"></div>
+                            <h4 class="extrabold color-dark">Easy to integrate with other tools</h4>
+                            <p class="color-medgrey">Although you can edit all content using PowerPoint, you can also integrate your content with your favorite video editors such as Camtasia. Premiere, AfterEffecs, and others with levidio green screen technic.</p>
+                        </div>
+                        <div class="col-md-5 offset-md-1 order-md-0 order-1">
+                            <img src="../../levidio.com/animatoon/assets/img/integrasi.gif" alt="" class="reason-gif">
+                        </div>
+                    </div>
+                    <div class="divider-md"></div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img src="../../levidio.com/animatoon/assets/img/tutorial.jpg" class="reason-gif" alt="">
+                        </div>
+                        <div class="col-md-6 offset-md-1 my-auto text-center text-md-left">
+                            <div class="divider-sm d-md-none"></div>
+                            <h4 class="extrabold color-dark">Step by step tutorials</h4>
+                            <p class="color-medgrey">We have provided very detailed tutorials step by step to ensure you can master Levidio Animatoon faster and easier.</p>
+                        </div>
+                    </div>
+                    <div class="divider-lg"></div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="reason">
+                                <img class="reason-img" src="../../levidio.com/animatoon/assets/img/allinone.png" alt="">
+                                <h6 class="bold color-purple">‘All in One’ solution with over 650+ Templates and graphic assets</h6>
+                                Levidio Animatoon is super effective for your business promotion
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="reason">
+                                <img class="reason-img" src="../../levidio.com/animatoon/assets/img/effect.png" alt="">
+                                <h6 class="bold color-purple">Innovative effects</h6>
+                                Levidio is a trendsetter when we talk about video and graphic creation using PowerPoint.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="reason">
+                                <img class="reason-img" src="../../levidio.com/animatoon/assets/img/license.png" alt="">
+                                <h6 class="bold color-purple">Flexible license</h6>
+                                With the Levidio Commercial License, you can use Levidio to create videos for your clients and keep 100% of the profits.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End: Reason -->
+
+    <!-- Start: Easy -->
+    <section id="easy" class="pt-0">
+        <img src="../../levidio.com/animatoon/assets/img/easy-top.png" class="ornament ornament-top position-relative">
+        <div class="container">
+            <div class="text-center position-relative mt-4">
+                <h2 class="extrabold color-yellow">2 MINUTES VIDEO CREATION CHALLENGE</h2>
+                <h6 class="soft-md">Watch how we create high converting video using Levidio Animatoon <br class="d-none d-lg-block"> in less than 2 minutes</h6>
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="easy-vid">
+                            <a href="https://www.youtube.com/watch?v=wfhtAQzU_T8" class="youtube">
+                                <img src="../../levidio.com/animatoon/assets/img/demo.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End: Easy -->
+
+    <!-- Start: Testimonials -->
+    <section id="testimonials" class="py-0">
+        <img src="../../levidio.com/animatoon/assets/img/module-title-top.png" class="ornament ornament-top position-relative">
+        <div class="divider-lg"></div>
+        <div class="divider-md"></div>
+        <div class="divider"></div>
+        <div class="divider d-md-none"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 text-center text-md-left">
+                    <h4 class="color-dark extrabold">Levidio is Trusted by more than <span class="color-green">17.000+</span> <br class="d-md-none"> entrepreneurs and Marketers from Around the World</h4>
+                    <h6>Sold more than <span class="semibold">32.000+</span> in all versions.</h6>
+                </div>
+                <div class="col-md-4 text-xl-right text-center text-md-left">
+                    <img src="../../levidio.com/animatoon/assets/img/users.png" height="50px" alt="">
+                </div>
+            </div>
+            <div class="divider-md d-none d-lg-block"></div>
+            <div class="row gutter-sm">
+                <div class="col-xl-3 pr-md-4 text-center text-md-left">
+                    <h3 class="color-purple my-4">____</h3>
+                    <h5 class="color-dark bold mb-1">Check out what <span class="color-green extrabold">the World's Top Internet Marketers</span> say</h5>
+                    <p class="semibold">About Levidio</p>
+                </div>
+                <div class="col-xl-3 col-lg-4">
+                    <div class="card testimonial mb-2 mb-lg-0">
+                        <div class="quote quote-1"></div>
+                        <div class="card-body">
+                            <div class="say">
+                                “I recommend the Levidio Templates because they are some of the highest quality ones I’ve found. I also love the very innovative techniques Ilham and his team use to pull off really sweet effects using SmartArt, masks, lens flares, and advanced animations that are easy to modify &amp; use. Well done!”
+                            </div>
+                            <div class="media testimonial-user">
+                                <img class="mr-3 testimonial-photo" src="../../levidio.com/animatoon/assets/img/user/lon.jpg">
+                                <div class="media-body">
+                                    <div class="testimonial-name extrabold color-dark">Lon Naylor</div>
+                                    <div class="testimonial-job text-xs soft-md semibold">Ex Microsoft guy</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4">
+                    <div class="card testimonial mb-2 mb-lg-0">
+                        <div class="card-body">
+                            <div class="say">
+                                “I check out just about every PowerPoint video product on the market. Levidio templates and assets are easily the most creative and professional PowerPoint for video resources available. Congrats to the Rootpixel team for amazing work.”
+                            </div>
+                            <div class="media testimonial-user">
+                                <img class="mr-3 testimonial-photo" src="../../levidio.com/animatoon/assets/img/user/tracey.jpg">
+                                <div class="media-body">
+                                    <div class="testimonial-name extrabold color-dark">Tracey Meagher</div>
+                                    <div class="testimonial-job text-xs soft-md semibold">Vydeo Club</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4">
+                    <div class="card testimonial mb-2 mb-lg-0">
+                        <div class="quote quote-2"></div>
+                        <div class="card-body">
+                            <div class="say">
+                                    You can always rely on Levidio to deliver top quality and unbelievable value, and V4 is no different. It's puts impressive, ready to go video and web templates and stunning graphics kits right at your fingertips.
+                            </div>
+                            <div class="media testimonial-user">
+                                <img class="mr-3 testimonial-photo" src="../../levidio.com/animatoon/assets/img/user/chrissy.jpg">
+                                <div class="media-body">
+                                    <div class="testimonial-name extrabold color-dark">Chrissy Withers</div>
+                                    <div class="testimonial-job text-xs soft-md semibold">Pro Video Vault</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="divider d-none d-lg-block"></div>
+            <div class="text-center">
+                <h3 class="color-purple my-3">. . .</h3>
+                <h5 class="color-dark bold mb-1">Dan apa kata <span class="color-purple extrabold">Top Internet Marketer Indonesia</span></h5>
+                <h6 class="semibold">Tentang produk-produk Levidio</h6>
+            </div> -->
+            <div class="divider"></div>
+            <!-- <div class="row">
+                <div class="col-md-4">
+                    <div class="card testimonial mb-2 mb-lg-0">
+                        <div class="card-body">
+                            <div class="say">
+                                “Open, edit, publish, selesai! 3 langkah mudah menggunakan levidio . Masih ditambah juga desain yg lengkap sesuai dengan suasana saat ini. Sangat mudah disesuaikan, saya sangat merekomendasikan levidio! selain kualitas templatenya, after salesnya itu lho.. MUANTAP!”
+                            </div>
+                            <div class="media testimonial-user">
+                                <img class="mr-3 testimonial-photo" src="assets/img/user/agus.jpg">
+                                <div class="media-body">
+                                    <div class="testimonial-name extrabold color-dark">Agus Sakti</div>
+                                    <div class="testimonial-job text-xs soft-md semibold">Product Creator</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card testimonial mb-2 mb-lg-0">
+                        <div class="card-body">
+                            <div class="say">
+                                "Ini Gokil! Saya punya tim bagian branding yang salah satu kerjaannya bikin kaya beginian. Dan tahukah Anda, jasa buat visual identity dan desain-desain penunjang brand itu harganya mahal banget, bahkan bisa tembus ratusan juta bahkan miliaran. 
+                                <br><br>
+                                Ini bukan cuma ngomong doang, tapi Saya kenal dekat dengan orang-orangnya. Gokilnya, dengan Levidio Animatoon ini Anda bisa berkreasi sesuka hati Anda, sesuai keinginan Anda, tanpa harus bayar jasa desain grafis dan orang branding mahal-mahal. Sayang kalau cuma dilewatkan gitu aja, wajib punya!"
+                            </div>
+                            <div class="media testimonial-user">
+                                <img class="mr-3 testimonial-photo" src="assets/img/user/dewa.jpg">
+                                <div class="media-body">
+                                    <div class="testimonial-name extrabold color-dark">Dewa Eka Prayoga</div>
+                                    <div class="testimonial-job text-xs soft-md semibold">Best Seller Author, Internet Marketer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card testimonial mb-2 mb-lg-0">
+                        <div class="card-body">
+                            <div class="say">
+                                “Levidio adalah salah satu kebanggaan karya anak bangsa yg luar biasa, berkelas serta berkualitas tingkat dunia. Anda akan disuguhkan template video yang luar biasa yang bisa digunakan dalam tiap kesempatan presentasi bisnis anda. Bila ingin menghadirkan presentasi yang berkualitas serta berkelas tinggi, cukup dengan Levidio! Topp!!”
+                            </div>
+                            <div class="media testimonial-user">
+                                <img class="mr-3 testimonial-photo" src="assets/img/user/yusuf.jpg">
+                                <div class="media-body">
+                                    <div class="testimonial-name extrabold color-dark">Yusuf Shembah</div>
+                                    <div class="testimonial-job text-xs soft-md semibold">Ratakan</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div> -->
+            <div class="text-center">
+                <a href="https://levidio.id/testimonials" target="_blank">
+                    <button class="btn btn-gradient-purple btn-shadowed" style="z-index: 99">
+                        See all testimonials
+                    </button>
+                </a>
+            </div>
+        </div>
+        <img src="../../levidio.com/animatoon/assets/img/testi-bottom.png" class="ornament ornament-bottom position-relative">
+    </section>
+    <!-- End: Testimonials -->
+
+    <!-- Start: Users -->
+    <section id="users" class="bg-white pb-0">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-10 offset-md-1">
+                    <h4 class="semibold">
+                        Levidio Animatoon <span class="extrabold color-purple">is suitable for anyone</span>,
+                        <b>from beginners to professionals</b>.
+                        From housewives to designers, <b>anyone!</b>                    
+                    </h4>
+                    <div class="divider"></div>
+                    <img src="../../levidio.com/animatoon/assets/img/cocok.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End: Users -->
+    
+    <!-- Start: Module Title -->
+    <section id="module-title" class="py-0  position-relative">
+        <img class="ornament ornament-top position-relative" src="../../levidio.com/animatoon/assets/img/module-title-top-2.png">
+        <div class="divider-md"></div>
+        <div class="divider"></div>
+        <div class="container text-center">
+            <h3 class="extrabold color-yellow">See All Video Templates and Modules</h3>
+            <h4 class="soft-md">in Levidio Animatoon</h4>
+        </div>
+        <img src="../../levidio.com/animatoon/assets/img/module-title-bottom-ornaments.png" class="ornament ornament-bottom">
+        <img src="../../levidio.com/animatoon/assets/img/module-title-bottom.png" class="ornament ornament-bottom position-relative">
+    </section>
+    <!-- End: Module Title -->
+    
+    <!-- Start: Module 1 -->
+    <section id="module-1" class="module">
+        <div class="container">
+            <div class="module-title">
+                <h6 class="color-purple bold mb-3">Module #1</h6>
+                <h2 class="extrabold color-dark">Static and Animated Character</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-8 offset-md-2 text-center">
+                    <h6 class="mb-5 semibold">
+                        Contains Thousands of Poses with mov, png, gif, &amp; emf (editable) formats, already optimized and can be used in all your favorite video editors starting from PowerPoint, after effects, premiere pro, Camtasia and other video editors
+                    </h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body-md card-full">
+                    <div class="row gutter-sm">
+                        <div class="col-md-6">
+                            <div class="character-module grey">
+                                <div class="row mb-4">
+                                    <div class="col-md-10 col-9 pr-0">
+                                        <div class="module-item">
+                                            <div class="item-title">
+                                                Casual Man 1
+                                            </div>
+                                            <img src="../../levidio.com/animatoon/assets/img/modules/1/man-flat.gif" class="rounded-md" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-3 text-center my-auto">
+                                        <img class="character" src="../../levidio.com/animatoon/assets/img/modules/1/png/man-flat.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="character-module grey">
+                                <div class="row mb-4">
+                                    <div class="col-md-10 col-9 pr-0">
+                                        <div class="module-item">
+                                            <div class="item-title">
+                                                Online Delivery Guy
+                                            </div>
+                                            <img src="../../levidio.com/animatoon/assets/img/modules/1/driver-online.gif" class="rounded-md" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-3 text-center my-auto">
+                                        <img class="character" src="../../levidio.com/animatoon/assets/img/modules/1/png/driver.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="character-module grey">
+                                <div class="row mb-4">
+                                    <div class="col-md-10 col-9 pr-0">
+                                        <div class="module-item">
+                                            <div class="item-title">
+                                                Casual Man 2
+                                            </div>
+                                            <img src="../../levidio.com/animatoon/assets/img/modules/1/man-flat-2.gif" class="rounded-md" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-3 text-center my-auto">
+                                        <img class="character" src="../../levidio.com/animatoon/assets/img/modules/1/png/man-flat-2.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="character-module grey">
+                                <div class="row">
+                                    <div class="col-md-10 col-9 pr-0">
+                                        <div class="module-item">
+                                            <div class="item-title">
+                                                Casual Woman
+                                            </div>
+                                            <img src="../../levidio.com/animatoon/assets/img/modules/1/hijab-flat.gif" class="rounded-md" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-3 text-center my-auto">
+                                        <img class="character" src="../../levidio.com/animatoon/assets/img/modules/1/png/hijab-flat.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="character-module">
+                                <div class="row mb-4">
+                                    <div class="col-md-10 col-9 pr-0">
+                                        <div class="module-item">
+                                            <div class="item-title">
+                                                Architect Woman
+                                            </div>
+                                            <img src="../../levidio.com/animatoon/assets/img/modules/1/architect-woman.gif" class="rounded-md" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-3 text-center my-auto">
+                                        <img class="character" src="../../levidio.com/animatoon/assets/img/modules/1/png/architect.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="character-module">
+                                <div class="row mb-4">
+                                    <div class="col-md-10 col-9 pr-0">
+                                        <div class="module-item">
+                                            <div class="item-title">
+                                                Designer
+                                            </div>
+                                            <img src="../../levidio.com/animatoon/assets/img/modules/1/designer.gif" class="rounded-md" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-3 text-center my-auto">
+                                        <img class="character" src="../../levidio.com/animatoon/assets/img/modules/1/png/designer.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 offset-md-3">
+                            <div class="character-module">
+                                <div class="row mb-4">
+                                    <div class="col-md-10 col-9 pr-0">
+                                        <div class="module-item">
+                                            <div class="item-title">
+                                                Employee
+                                            </div>
+                                            <img src="../../levidio.com/animatoon/assets/img/modules/1/pns.gif" class="rounded-md" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-3 text-center my-auto">
+                                        <img class="character" src="../../levidio.com/animatoon/assets/img/modules/1/png/pns.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="card">
+                <div class="card-body-md card-full">
+                    <img src="../../levidio.com/animatoon/assets/img/all-character.jpg" class="rounded-md" alt="">
+                </div>
+            </div>
+
+            <div class="divider"></div>
+        </div>
+    </section>
+    <!-- End: Module 1 -->
+
+    <!-- Start: Module 2 -->
+    <section id="module-2" class="module bg-img-5 overlay-gradient-purple pb-0">
+        <div class="container position-relative">
+            <div class="module-title">
+                <h6 class="color-yellow bold mb-3">Module #2</h6>
+                <h2 class="extrabold color-white">Huge Variety of Explainer Video Templates</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-8 offset-md-2 text-center">
+                    <h6 class="mb-5 semibold color-white">
+                        Explainer Video Templates created using PowerPoint, easily editable to suits on your needs, you can export up to 4K resolution, and also easily integrated with other video editors.
+                    </h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card transparent">
+                    <div class="card-body-md card-full">
+                        <div class="row gutter-sm">
+                            <div class="col-sm-6 col-6">
+                                <div class="module-vid">
+                                    <div class="item-title">
+                                        Shopping App
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=Te6_OotWch4" class="youtube">
+                                        <img src="../../levidio.com/animatoon/assets/img/modules/1/1.jpg" class="rounded-md mb-4" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-6">
+                                <div class="module-vid">
+                                    <div class="item-title">
+                                        Cafe &amp; Resto
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=YwSzPA8LinY" class="youtube">
+                                        <img src="../../levidio.com/animatoon/assets/img/modules/1/3.jpg" class="rounded-md mb-4" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-6">
+                                <div class="module-vid">
+                                    <div class="item-title">
+                                        Consultation
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=aJJNG29nzgk" class="youtube">
+                                        <img src="../../levidio.com/animatoon/assets/img/modules/1/4.jpg" class="rounded-md mb-4" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-6">
+                                <div class="module-vid">
+                                    <div class="item-title">
+                                        Healthcare
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=lrBPYSIVR5s" class="youtube">
+                                        <img src="../../levidio.com/animatoon/assets/img/modules/1/6.jpg" class="rounded-md mb-4" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-6">
+                                <div class="module-vid">
+                                    <div class="item-title">
+                                        Designer
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=EaU5KghnYH0" class="youtube">
+                                        <img src="../../levidio.com/animatoon/assets/img/modules/1/7.jpg" class="rounded-md mb-4" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-6">
+                                <div class="module-vid">
+                                    <div class="item-title">
+                                        Property
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=LItmhw78TxI" class="youtube">
+                                        <img src="../../levidio.com/animatoon/assets/img/modules/1/8.jpg" class="rounded-md mb-4" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-6">
+                                <div class="module-vid">
+                                    <div class="item-title">
+                                        Fatloss
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=8nLPsz_xG3c" class="youtube">
+                                        <img src="../../levidio.com/animatoon/assets/img/modules/1/9.jpg" class="rounded-md mb-4" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-6">
+                                <div class="module-vid">
+                                    <div class="item-title">
+                                        Handyman
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=_dKfWOTpXs0" class="youtube">
+                                        <img src="../../levidio.com/animatoon/assets/img/modules/1/10.jpg" class="w-100 rounded-md mb-4" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-6">
+                                <div class="module-vid">
+                                    <div class="item-title">
+                                        Baby Shop
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=IeD46VKpFo8" class="youtube">
+                                        <img src="../../levidio.com/animatoon/assets/img/modules/1/11.jpg" class="rounded-md mb-4" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-6">
+                                <div class="module-vid">
+                                    <div class="item-title">
+                                        Mobile App
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=VACTLqKICmA" class="youtube">
+                                        <img src="../../levidio.com/animatoon/assets/img/modules/1/12.jpg" class="rounded-md mb-4" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-6">
+                                <div class="module-vid">
+                                    <div class="item-title">
+                                        Video Service
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=QaCKDQtKyXM" class="youtube">
+                                        <img src="../../levidio.com/animatoon/assets/img/modules/1/2.jpg" class="rounded-md mb-4" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-6">
+                                <div class="module-vid">
+                                    <div class="item-title">
+                                        Travel App
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=1whECUXGOuM" class="youtube">
+                                        <img src="../../levidio.com/animatoon/assets/img/modules/1/5.jpg" class="rounded-md mb-4" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divider-md"></div>
+        </div>
+        <img class="ornament ornament-bottom position-relative" src="../../levidio.com/animatoon/assets/img/buy-bottom.png">
+    </section>
+    <!-- End: Module 2 -->
+
+    <!-- Start: Module 3 -->
+    <section id="module-3" class="module bg-light">
+        <div class="container">
+            <div class="module-title">
+                <h6 class="color-purple bold mb-3">Module #3</h6>
+                <h2 class="extrabold color-dark">Animated &amp; Static World <br> Landscape Background</h2>
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <p>Get access to the world’s most popular landscapes that are exclusively drawn and animated inside PowerPoint, you can adjust the color, atmosphere just by PowerPoint!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="divider-sm"></div>
+            <div class="row">
+                <div class="col-sm-6 offset-sm-3">
+                    <div class="module-vid overlay">
+                        <a href="https://www.youtube.com/watch?v=fDgiWwp4KZs" class="youtube">
+                            <img src="../../img.youtube.com/vi/fDgiWwp4KZs/maxresdefault.jpg" class="rounded-md" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-8 offset-md-2">
+                    <img src="../../levidio.com/animatoon/assets/img/modules/3/1.jpg" class="rounded-md" alt="">
+                </div>
+            </div>
+            <div class="divider-md"></div>
+        </div>
+    </section>
+    <!-- End: Module 3 -->
+
+    <!-- Start: Module 4 -->
+    <section id="module-4" class="module bg-img-6 overlay-gradient-orange-2 py-0">
+        <img class="ornament ornament-top position-relative" src="../../levidio.com/animatoon/assets/img/easy-top.png">
+        <div class="container position-relative">
+            <div class="module-title mb-5">
+                <h6 class="color-yellow bold mb-3">Module #4</h6>
+                <h2 class="extrabold color-light">Animated &amp; Static Infographic Templates</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-7 col-sm-6">
+                    <div class="module-vid overlay">
+                        <a href="https://www.youtube.com/watch?v=5HAJLCbi40U" class="youtube">
+                            <img src="../../img.youtube.com/vi/mDQpDkUFve8/maxresdefault.jpg" class="rounded-md" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-5 offset-sm-1 my-auto text-center text-sm-left">
+                    <div class="color-light soft-md">
+                        <p>High-quality infographics that you can easily customize with just PowerPoint, now you can create presentations and infographic data faster and easier than ever.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="divider-md"></div>
+            <div class="card transparent">
+                <div class="card-body-md card-full">
+                    <div class="row gutter-xs">
+                        <div class="col-md-4">
+                            <p class="text-center color-white bold">FLAT MODERN</p>
+                            <img src="../../levidio.com/animatoon/assets/img/modules/4/1.jpg" class="rounded-md" alt="">
+                        </div>
+                        <div class="col-md-4">
+                            <p class="text-center color-white bold mt-5 mt-md-0">FLAT</p>
+                            <img src="../../levidio.com/animatoon/assets/img/modules/4/2.jpg" class="rounded-md" alt="">
+                        </div>
+                        <div class="col-md-4">
+                            <p class="text-center color-white bold mt-5 mt-md-0">ELEGANT</p>
+                            <img src="../../levidio.com/animatoon/assets/img/modules/4/3.jpg" class="rounded-md" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        <img class="ornament ornament-bottom position-relative" src="../../levidio.com/animatoon/assets/img/steps-bottom.png">
+    </section>
+    <!-- End: Module 4 -->
+    
+    <!-- Start: Module 5 -->
+    <section id="module-5" class="module bg-light">
+        <div class="container">
+            <div class="module-title">
+                <h6 class="color-purple bold mb-3">Module #5</h6>
+                <h2 class="extrabold color-dark">Animated &amp; Static Banners</h2>
+
+                <div class="row mt-4">
+                    <div class="col-xl-10 offset-xl-1">
+                        <div class="row">
+                            <div class="col-md-7 col-sm-6">
+                                <div class="module-vid overlay">
+                                    <a href="https://www.youtube.com/watch?v=4lAbff9VXY4" class="youtube">
+                                        <img src="../../levidio.com/animatoon/assets/img/modules/5/cover.jpg" class="rounded-md" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-5 offset-sm-1 my-auto text-center text-sm-left">
+                                <p>Promotional banners for services or products that you can adjust with PowerPoint only! It has been assembled with an interesting animation</p>
+                            </div>
+                        </div>
+                        <div class="divider-md"></div>
+                        <div class="card">
+                            <div class="card-body-md card-full">
+                                <img src="../../levidio.com/animatoon/assets/img/modules/5/1.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End: Module 5 -->
+
+    <!-- Start: Module 6 -->
+    <section id="module-6" class="module bg-img-3 overlay-gradient-blue py-0">
+        <img class="ornament ornament-top position-relative rotate" src="../../levidio.com/animatoon/assets/img/steps-bottom.png">
+        <div class="container position-relative">
+            <div class="module-title mb-5">
+                <h6 class="color-yellow bold mb-3">Module #6</h6>
+                <h2 class="extrabold color-light">Animated &amp; Static Room Background</h2>
+                <p class="text-white">The design of the room with the latest design style that has been assembled with an <br> interesting animation and you can adjust it only with PowerPoint</p>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-6 offset-md-3">
+                    <div class="module-vid overlay">
+                        <a href="https://www.youtube.com/watch?v=Ruy7-HwD6-4" class="youtube">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/6/2.jpg" class="rounded-md" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="card transparent">
+                        <div class="card-body-md card-full">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/6FE.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <img class="ornament ornament-bottom position-relative" src="../../levidio.com/animatoon/assets/img/steps-bottom.png">
+    </section>
+    <!-- End: Module 6 -->
+    
+    <!-- Start: Module 7 -->
+    <section id="module-7" class="module bg-light">
+        <div class="container">
+            <div class="module-title mb-4">
+                <h6 class="color-peach bold mb-3">Module #7</h6>
+                <h2 class="extrabold color-dark">Animated &amp; Static Office Background</h2>
+                <p>Office design where you can edit almost all the aspects: color, <br> place or mix and match one another only using PowerPoint!</p>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6 offset-md-3">
+                    <div class="module-vid overlay">
+                        <a href="https://www.youtube.com/watch?v=0Os0uf-Ssa0" class="youtube">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/7/7.jpg" class="rounded-md" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="card">
+                        <div class="card-body-md card-full">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/7FE.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+    </section>
+    <!-- End: Module 7 -->
+
+    <!-- Start: Module 8 -->
+    <section id="module-8" class="module bg-img-4 overlay-gradient-darkpurple py-0">
+        <img class="ornament ornament-top position-relative module-title-top" src="../../levidio.com/animatoon/assets/img/testi-top.png">
+        <div class="container">
+            <div class="module-title position-relative mb-4">
+                <h6 class="color-yellow bold mb-3">Module #8</h6>
+                <h2 class="extrabold color-white">Animated &amp; Static Studio Background</h2>
+                <p class="text-white">Pro Office/studio design that you can edit almost all the aspects: color, <br> place or mix and match one another with just PowerPoint!</p>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6 offset-md-3">
+                    <div class="module-vid overlay">
+                        <a href="https://www.youtube.com/watch?v=TpE65Os8Lo4" class="youtube">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/8/8.jpg" class="rounded-md" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="card">
+                        <div class="card-body-md card-full">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/8FE.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <img class="ornament ornament-bottom position-relative" src="../../levidio.com/animatoon/assets/img/steps-bottom.png">
+    </section>
+    <!-- End: Module 8 -->
+    
+    <!-- Start: Module 9 -->
+    <section id="module-9" class="module bg-light pb-0">
+        <div class="container">
+            <div class="module-title mb-5">
+                <h6 class="color-purple bold mb-3">Module #9</h6>
+                <h2 class="extrabold color-dark">Animated &amp; Static Landscape Background</h2>
+                <p>Natural landscape design that you can edit almost all the aspects: color, <br> place or mix and match one another with just PowerPoint!</p>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6 offset-md-3">
+                    <div class="module-vid overlay">
+                        <a href="https://www.youtube.com/watch?v=pq46yVl2kNU" class="youtube">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/9/9.jpg" class="rounded-md" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="card">
+                        <div class="card-body card-full">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/9FE.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <img class="ornament ornament-bottom position-relative rotate" src="../../levidio.com/animatoon/assets/img/bonus-top.png">
+    </section>
+    <!-- End: Module 9 -->
+
+    <!-- Start: Module 10 -->
+    <section id="module-10" class="module bg-white">
+        <div class="container">
+            <div class="module-title">
+                <h6 class="color-purple bold mb-3">Module #10</h6>
+                <h2 class="extrabold color-dark">Animated &amp; Static Papercut Background</h2>
+                <p>Modern design that will captivate your prospective customers, you can customize it with just a PowerPoint!</p>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6 offset-md-3">
+                    <div class="module-vid overlay">
+                        <a href="https://www.youtube.com/watch?v=cFI9gHhTgbU" class="youtube">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/10/10.jpg" class="rounded-md" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="card">
+                        <div class="card-body-md card-full">
+                            <img src="../../levidio.com/animatoon/assets/img/modules/10FE.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End: Module 10 -->
+
+    <!-- Start: Module 11 -->
+    <section id="module-11" class="module bg-light py-0">
+        <img class="ornament ornament-top position-relative" src="../../levidio.com/animatoon/assets/img/bonus-top.png">
+        <div class="container">
+            <div class="module-title">
+                <h6 class="color-purple bold mb-3">Module #11</h6>
+                <h2 class="extrabold color-dark">Animated &amp; Static Abstract Backgrounds</h2>
+                <p>Abstract background designs that you can use for all types of designs and have been integrated with interesting animations!</p>
+            </div>
+
+            <div class="divider"></div>
+            
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="module-vid overlay">
+                                <a href="https://www.youtube.com/watch?v=N_UCgfIFlnM" class="youtube">
+                                    <img src="../../levidio.com/animatoon/assets/img/modules/11/11-1.jpg" class="rounded-md" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="module-vid overlay">
+                                <a href="https://www.youtube.com/watch?v=WhId8wY0IjA" class="youtube">
+                                    <img src="../../levidio.com/animatoon/assets/img/modules/11/11-2.jpg" class="rounded-md" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="module-vid overlay">
+                                <a href="https://www.youtube.com/watch?v=xUTFeyfGXw8" class="youtube">
+                                    <img src="../../levidio.com/animatoon/assets/img/modules/11/11-3.jpg" class="rounded-md" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card rounded-md">
+                        <img src="../../levidio.com/animatoon/assets/img/modules/11FE.png" alt="">
+                    </div>
+                    <div class="divider"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End: Module 11 -->
+
+    <!-- Start: Success story -->
+    <section id="success-story">
+        <!-- <img src="assets/img/success-top.png" class="ornament ornament-top position-relative"> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="row">
+                        <div class="col-md-5 my-auto">
+                            <h5 class="main-text">
+                                Levidio <span class="extrabold">saves you time and money</span> in creating professional videos and graphics.
+                                <br><br>But do you know what is better than saving money? <span class="extrabold color-green">Making money!</span>
+                            </h5>
+                        </div>
+                        <div class="col-md-6 offset-md-1 col-sm-8 offset-sm-2 col-8 offset-2">
+                            <div class="divider d-md-none"></div>
+                            <img src="../../levidio.com/animatoon/assets/img/money.png" alt="">
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="divider d-none d-md-block"></div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-2 text-center">
+                                    <img src="https://levidio.com/cinemagicv2/assets/img/license.svg" alt="">
+                                </div>
+                                <div class="col-md-10">
+                                    <h3 class="extrabold color-green mb-4">Free Commercial License</h3>
+                                    <p>
+                                        Download Levidio Animatoon now, and get a commercial license for all content, templates, and modules. This means you can use Levidio Animatoon to make high-quality videos and graphics for your clients. You can start working as a professional video and graphic creator.
+                                        <br><br>
+                                        You can sell your video and graphic creation services through your website or social media or on sites like Fiverr, Upwork, and much more!
+                                        <br><br>
+                                        Remember, With Levidio Animatoon you can easily create high-quality videos or graphics in minutes. So it'll be a very easy job for you with virtually unlimited possibilities.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End: Success story -->
+
+    <!-- Start: Buy -->
+    <section id="buy" class="py-0">
+        <img src="../../levidio.com/animatoon/assets/img/buy-top-ornaments.png" class="ornament ornament-top">
+        <img src="../../levidio.com/animatoon/assets/img/buy-top.png" class="ornament ornament-top">
+        <div class="container">
+            <div class="buy-title">
+                <h2 id="buyb" class="extrabold">
+                    Get access to  <span class="color-softyellow">more than 2,802+ templates  <br class="d-none d-md-block"> and graphic assets</span>
+                    for your promotional <br class="d-none d-md-block"> and branding needs, right now!
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="buy-package">
+                                <img src="../../levidio.com/animatoon/assets/img/personal.png" alt="">
+                                <ul class="checklist grey">
+                                    <li>Character Sets</li>
+                                    <li>Huge Variety of Explainer Video Templates</li>
+                                    <li>World Landscape Background</li>
+                                    <li>Infographic Templates</li>
+                                    <li>Banners</li>
+                                    <li>Room Background</li>
+                                    <li>Office Background</li>
+                                    <li>Studio Background</li>
+                                    <li>Landscape Background</li>
+                                    <li>Papercut Background</li>
+                                    <li>Abstract Backgrounds</li>
+                                    <li>Newbie Friendly</li>
+                                    <li>No additional plugin required, everything is performed within powerpoint</li>
+                                    <li>Step by step tutorials to help you get started in minutes</li>
+                                    <li class="no">Commercial License : Sell Video Service to Your Client (you don't get this license with personal rights option)</li>
+                                </ul>
+                                <!-- <p class="mb-0 text-center bold">SPECIAL LAUNCH PRICE :</p>
+                                <h2 class="text-center extrabold color-dark mb-0">
+                                    <del>$37</del>
+                                </h2> -->
+                                <div class="text-center bold mt-3">
+                                    GET INSTANT <b><u>37% OFF</u></b> USING THIS COUPON: <br>
+                                    <div class="coupon">
+                                        animatoonpersonal
+                                    </div>
+                                </div>
+                                <a href="https://www.jvzoo.com/b/94827/354844/6"><img src="https://i.jvzoo.com/94827/354844/6" alt="Levidio Animatoon - Personal License" border="0"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="buy-package">
+                                <img src="../../levidio.com/animatoon/assets/img/commercial.png" alt="">
+                                <ul class="checklist">
+                                    <li>Character Sets</li>
+                                    <li>Huge Variety of Explainer Video Templates</li>
+                                    <li>World Landscape Background</li>
+                                    <li>Infographic Templates</li>
+                                    <li>Banners</li>
+                                    <li>Room Background</li>
+                                    <li>Office Background</li>
+                                    <li>Studio Background</li>
+                                    <li>Landscape Background</li>
+                                    <li>Papercut Background</li>
+                                    <li>Abstract Backgrounds</li>
+                                    <li>Commercial License</li>
+                                    <li>Newbie Friendly</li>
+                                    <li>No additional plugin required, everything is performed within powerpoint</li>
+                                    <li>Step by step tutorials to help you get started in minutes</li>
+                                    <li>Commercial License : Sell Video Service to Your Client</li>
+                                </ul>
+                                <!-- <p class="mb-0 text-center bold">SPECIAL LAUNCH PRICE :</p>
+                                <h2 class="text-center extrabold color-dark mb-0">
+                                    <del>$47</del>
+                                </h2> -->
+                                <div class="text-center bold mt-3">
+                                    GET INSTANT <b><u>37% OFF</u></b> USING THIS COUPON: <br>
+                                    <div class="coupon">animatoon</div>
+                                </div>
+                                <a href="https://www.jvzoo.com/b/94827/354363/6"><img src="https://i.jvzoo.com/94827/354363/6" alt="Levidio Animatoon - Fastest Way to Create Animated Video" border="0"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="../../levidio.com/animatoon/assets/img/buy-bottom.png" class="ornament ornament-bottom position-relative">
+    </section>
+    <!-- End: Buy -->
+
+    <!-- Start: Instant Access -->
+    <section id="access" class="bg-light mb-0">
+        <div class="container">
+            <div class="text-center color-dark">
+                <h4 class="extrabold">Get Levidio Animatoon <span class="color-peach">Now!</span> </h4>
+                <h5 class="bold soft">and get instant access to :</h5>
+            </div>
+            <div class="divider-md"></div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <img src="../../levidio.com/animatoon/assets/img/access-product.png" alt="" class="access-icon">
+                            <p class="bold mb-2">Levidio Animatoon</p>
+                            <span class="soft">Best and most complete video templates collection with drag &amp; drop technology will give wings to your creativity. Now you can create attractive video for your marketing needs in minutes.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <img src="../../levidio.com/animatoon/assets/img/access-tutorial.png" alt="" class="access-icon">
+                            <p class="bold mb-2">Step by Step Tutorial</p>
+                            <span class="soft">Although it's super simple to use, we've done step-by-step training, so you are well versed with all the tools and features Levidio Cinemagic has to offer.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <img src="../../levidio.com/animatoon/assets/img/access-support.png" alt="" class="access-icon">
+                            <p class="bold mb-2">World Class Support</p>
+                            <span class="soft">Have questions? Don't hesitate to contact or friendly support staff anytime!.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End: Instant Access -->
+
+    <!-- Start: FAQ -->
+    <section id="faq" class="bg-dark py-0">
+        <img class="ornament ornament-top position-relative" src="../../levidio.com/animatoon/assets/img/faq-top.png">
+        <div class="container">
+            <div class="col-xl-10 offset-xl-1">
+                <div class="card vendor bg-gradient-purple color-white">
+                    <div class="card-body">
+                        <div class="row text-center text-sm-left">
+                            <div class="col-md-2 col-sm-3">
+                                <img src="../../levidio.com/animatoon/assets/img/vendor.png" alt="">
+                            </div>
+                            <div class="col-md-6 col-sm-9 my-auto">
+                                <h6 class="extrabold mt-3 mt-sm-0 mb-0 mb-md-0">See you inside member area</h6>
+                            </div>
+                            <div class="col-md-4 text-md-right my-auto d-none d-md-block">
+                                <div class="soft-md">Maulana Malik &amp; Ilham Zulkarnain</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="text-center text-md-left">
+                        <img src="../../levidio.com/animatoon/assets/img/faq.png" alt="" class="" style="height: 125px; margin-bottom: 50px">
+                    </div>
+                    <div class="faq">
+                        <h6 data-toggle="collapse" data-target="#faq-1">
+                            What is this?
+                        </h6>
+                        <div id="faq-1" class="collapse answer" data-parent="#faq">
+                            <span>Levidio is Powerpoint Explainer/Presentation Video templates it's not a software, plugin or wordpress theme.</span>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <h6 data-toggle="collapse" data-target="#faq-3">
+                            What is my license?
+                        </h6>
+                        <div id="faq-3" class="collapse answer" data-parent="#faq">
+                            <span>
+                                You've got personal license, and you can use it on unlimited projects you own. You're allowed for :
+                                <br><br>
+                                <b>[ YES ]</b> unlimited use on your web/video project
+                                <b>[ NO ]</b> RE-SELL in anyway
+                                <b>[ NO ]</b> Can't use for giveaway bonus
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <h6 data-toggle="collapse" data-target="#faq-4">
+                            How do i edit it? and How's about compability?
+                        </h6>
+                        <div id="faq-4" class="collapse answer" data-parent="#faq">
+                            <span>
+                                Just open your powerpoint 2013 or above, but we strongly suggest you to use powerpoint 2016, because there is a morph effect in some parallax templates that is only work with powerpoint 2016. Editing Levidio Cinemagic as easy as click and replace with your own content, LEVIDIO work in powerpoint for WINDOWS AND MAC. But you need to know that powerpoint for mac is not as good as ppt for windows, because ppt for mac can't set the time for rendering.
+                                <br><br>
+                                Some of the effects we have provided might won't probably work if you're not using Microsoft Office 2013/2016, but rest assured, the graphic is 100% identical. Microsoft Office 2013 &amp; 2016 are highly recommended to use as it has more features than others, but you still can use Levidio Cinemagic optimally even though you use other softwares, LEVIDIO work best with powerpoint 2013 &amp; 2016 if you using office 2007 or 2010 it's will open but some effect and layout will not working perfectly.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <h6 data-toggle="collapse" data-target="#faq-9">
+                            Do you guarantee that i can create video in 2 minutes?
+                        </h6>
+                        <div id="faq-9" class="collapse answer" data-parent="#faq">
+                            <span>
+                                The 2 minutes video creation claim is how you can easily edit our template by putting business information and details or do a quick editing such as replace character and text. 
+                                <br><br>
+                                Furthermore, if you need an advanced editing, you'll spend more than 2 minutes (ofcourse). We can't guarantee everyone can have the same speed on editing, while some others can do the editing for less than 2 minutes, in some case people will need more time. The resuls may vairy depend on your computer ability to render the video (the 2 minutes claim is not including render time anyway). But you can rest assured that we have made everything easy for you and Levidio Animatoon is one of the easiest to edit template with step by step tutorial included.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="faq">
+                        <h6 data-toggle="collapse" data-target="#faq-5">
+                            Are there any One-Time-Offers or Upsells?
+                        </h6>
+                        <div id="faq-5" class="collapse answer" data-parent="#faq">
+                            <span>
+                                Yes. Here's what you get inside Levidio Animatoon Pro ...
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <h6 data-toggle="collapse" data-target="#faq-13">
+                            How do I download it?
+                        </h6>
+                        <div id="faq-13" class="collapse answer" data-parent="#faq">
+                            <span>
+                                After successfully payment, you will received email to customer page and start download the amazing Levidio Cinemagic
+                            </span>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <h6 data-toggle="collapse" data-target="#faq-6">
+                            Does audio come with the package?
+                        </h6>
+                        <div id="faq-6" class="collapse answer" data-parent="#faq">
+                            <span>
+                                Unfortunately no. But we give you direct link to the audio creator so you can purchase it separately.
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="faq">
+                        <h6 data-toggle="collapse" data-target="#faq-7">
+                            What is your refund policy?
+                        </h6>
+                        <div id="faq-7" class="collapse answer" data-parent="#faq">
+                            <span>
+                                You should pay attention to our requirements, We Do The refund If there is an issue with the product and our technical support can't solve it for you, we will provide a refund for you within 30 days of your purchase.
+                                <br><br>
+                                <b>PRODUCT USAGE POST-REFUND:</b> By receiving a refund, you agree to remove all files downloaded from our website, and all rights to use the product will be revoked. We reserve the right to decline a refund if the client does not adhere to these conditions.
+                                <br><br>
+                                <b>REFUND PROCESS:</b> send your query to <a href="https://support.rootpixel.net" target="_blank">https://support.rootpixel.net</a>, DO NOT dispute via paypal, all refund is processing by JVzoo.
+                                <br><br>
+                                <b>REFUND POLICY:</b> Our refund policy only applies to the first time you purchase our product. Second time purchases will not be permitted the same rights to refund. We understand that sometimes the timing may not be right when you purchase our product and you may return to purchase later, but please be aware second purchase refund requests will not be permitted. This is to protect our product and ourselves from individuals who may take advantage of our refund policy.
+                                <br><br>
+                                <b>DUPLICATE PURCHASE:</b> In the event of a billing error or duplicate billing, levidio.com will investigate the matter and issue a full refund if deemed necessary.
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="faq">
+                        <h6 data-toggle="collapse" data-target="#faq-8">
+                            How do I contact support with any issue/concern?
+                        </h6>
+                        <div id="faq-8" class="collapse answer" data-parent="#faq">
+                            <span>
+                                Please send your question here : <a href="https://support.rootpixel.net" target="_blank">https://support.rootpixel.net</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="copyright text-center">
+                <span class="text-sm">Copyright © 2020 Levidio Animatoon - Powered by <a href="https://rootpixel.net" target="_blank" class="color-grey bold">Rootpixel</a></span>
+            </div>
+        </div>
+    </section>
+    <!-- End: FAQ -->
+
+     <!-- Fixed Footer -->
+     <!-- <div class="fixed-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 my-auto text-center text-md-left">
+                    <h5 class="mb-0 extrabold">Use this coupon to get instant <b class="color-softyellow">$9 OFF</b>: <u><b>animatoon</b></u></h5>
+                    <a href="#buyb" class="self">
+                        <button class="btn btn-orange btn-xs mt-2">GET INSTANT ACCESS HERE</button>
+                    </a>
+                </div>
+                <div class="col-md-5 text-center">
+                    <div class="mb-1 soft">price increase in :</div>
+                    <div id="countdown"></div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="divider-md"></div>
+
+    <script src="../../levidio.com/animatoon/assets/js/jquery-1.12.1.min.js"></script>
+    <script src="../../levidio.com/animatoon/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../../levidio.com/animatoon/assets/js/countdown-timer.min.js"></script>
+    <script src="../../levidio.com/animatoon/assets/js/youtube-popup.jquery.js"></script>
+    <script src="../../levidio.com/animatoon/assets/js/levidio-staticnav.js"></script>
+
+    <!-- FIXED FOOTER -->
+    <script type="text/javascript" src="../../levidio.com/blackfriday/assets/plugin/momentjs/moment.js"></script>
+    <script type="text/javascript" src="../../levidio.com/blackfriday/assets/plugin/momentjs/moment-with-locales.js"></script>
+    <script type="text/javascript" src="../../levidio.com/blackfriday/assets/plugin/momentjs/moment-timezone-with-data-2012-2022.min.js"></script>
+    <script type="text/javascript" src="../../levidio.com/blackfriday/assets/plugin/countdown/countdown-timer.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var finalDate = moment.tz("2020-06-29 11:00:00", "Asia/Jakarta");
+            $("#countdown").countdown(finalDate.toDate(), function (event) {
+                $(this).html(
+                    event.strftime(
+                        '<div class="timer-wrapper"><div class="time tx-white text-white">%D</div><span class="text tx-white text-white">days</span></div><div class="timer-wrapper"><div class="time tx-white text-white">%H</div><span class="text tx-white text-white">hours</span></div><div class="timer-wrapper"><div class="time tx-white text-white">%M</div><span class="text tx-white text-white">minutes</span></div><div class="timer-wrapper"><div class="time tx-white text-white">%S</div><span class="text tx-white text-white">seconds</span></div>'
+                    )
+                );
+            });
+            $("#countdown-nav").countdown(finalDate.toDate(), function (event) {
+                $(this).html(
+                    event.strftime(
+                        '<div class="timer-wrapper sm"><div class="time tx-white text-white">%D</div><span class="text">days</span></div><div class="timer-wrapper sm"><div class="time tx-white text-white">%H</div><span class="text">hrs</span></div><div class="timer-wrapper sm"><div class="time tx-white text-white">%M</div><span class="text">min</span></div><div class="timer-wrapper sm"><div class="time tx-white text-white">%S</div><span class="text">sec</span></div>'
+                    )
+                );
+            });
+        });
+    </script>
+
+
+</body></html>
